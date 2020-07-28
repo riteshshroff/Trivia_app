@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia App | Quiz</title>
+</head>
+<body style="background-color: dodgerblue;">
+    <center style="color: white;">
+        <h1>Trivia Quiz</h1>        
+    </center><br>
+    <center>
+        <table border="1">
+            <tr>
+                <th colspan="4">Trivia Quiz Score</th>
+            </tr>
+            <tr><th colspan="4">Hello:  {{name}}</th></tr>
+            <tr>
+                <td>S.No.</td>
+                <td>Question</td>
+                <td>Answer</td>
+                <td>Date-Time</td>
+            </tr>
+            {% for x in details %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{x.question}}</td>
+                <td>{{x.answer}}</td>
+                <td>{{x.created_at|date:'d-M-Y  P'}}</td>
+            </tr>
+            {% endfor %}
+        </table><br>
+        <div>
+            <a href="/" style="color:white;font-weight: bold;">Start Again</a>&nbsp;&nbsp;&nbsp;<a href="/view-all/" style="color:white;font-weight: bold;">History</a>
+        </div>
+    </center>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

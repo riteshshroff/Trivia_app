@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia App | Page2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body style="background-color: dodgerblue;">
+    <center style="color: white;">
+        <h1>Trivia Quiz</h1>        
+    </center>
+    <style>
+        #name::placeholder{
+            background-color:dodgerblue ;
+        }        
+        #answer:hover{
+            background-color: yellow;
+            border: none;
+        }
+        .btn1:hover{
+            background-color: red;
+        }
+    </style>
+    <div style="margin-top: 150px;"> 
+        <form action="{% url 'start-quiz' %}" method="POST">
+            {% csrf_token %}
+            <table align='center'>
+                <tr>
+                    <th>
+                        <center>
+                            <input type="hidden" name="name" id="name" value="{{name}}">
+                            <input type="text" name="question" id="name" value="What are the colors in the Indian national flag?" style="border: none;font-size: 30px;background-color: dodgerblue;width: 1000px;text-align: center;" readonly>
+                        </center>
+                    </th>                
+                </tr>
+                <tr>
+                    <td>
+                        <center>
+                            A: White<input type="checkbox" name="White" value="White" id="White" required >
+                            B: Yellow<input type="checkbox" name="Yellow" value="Yellow" id="Yellow"  >
+                            C: Orange<input type="checkbox" name="Orange" value="Orange" id="Orange" >
+                            D: Green<input type="checkbox" name="Green" value="Green" id="Green"  >                   
+                        </center><br>
+                    </td>    
+                </tr>
+                <tr>
+                    <td>
+                        <center>
+                            <input type="submit" class="btn1" value="Save & Finish" style='width: 100px; height: 30px;background-color: mediumblue;color: white;border: white;'>                        
+                        </center>
+                    </td>
+                </tr>
+            </table>      
+        </form>       
+    </div>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
